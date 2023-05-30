@@ -85,7 +85,7 @@ public class BookMehots {
                 Depo.input.nextLine();
                 String bookName = Depo.input.nextLine();
                 for (Books each : booksList) {
-                    if (each.getBookName().equals(bookName)) {
+                    if ((each.getBookName()).equalsIgnoreCase(bookName)) {
                         System.out.printf("%-10s %-15s %-15s %-20s", "Book Code", "Book Name", "Book Author", "Book Price");
                         System.out.println();
                         System.out.printf(Depo.Blue + "%-10d %-15s %-15s %-20d", each.getBookCode(), each.getBookName(),
@@ -105,7 +105,7 @@ public class BookMehots {
                 Depo.input.nextLine();
                 String bookAuthor = Depo.input.nextLine();
                 for (Books each : booksList) {
-                    if (each.getBookAuthor().equals(bookAuthor)) {
+                    if (each.getBookAuthor().equalsIgnoreCase(bookAuthor)) {
                         System.out.printf("%-10s %-15s %-15s %-20s", "Book Code", "Book Name", "Book Author", "Book Price");
                         System.out.println();
                         System.out.printf(Depo.Blue + "%-10d %-15s %-15s %-20d", each.getBookCode(), each.getBookName(),
