@@ -52,11 +52,11 @@ public class BookMehots {
 
 
     public void bookCodeWithShowBook() {
-        int count=0;
+        int count = 0;
         System.out.println("Bilgilerini goruntulemek ıstedıgınız kitabın adını giriniz..");
-        int bookCode= Depo.input.nextInt();
+        int bookCode = Depo.input.nextInt();
         for (Books each : booksList) {
-            if (each.getBookCode()==bookCode) {
+            if (each.getBookCode() == bookCode) {
                 System.out.printf("%-10s %-15s %-15s %-20s", "Book Code", "Book Name", "Book Author", "Book Price");
                 System.out.println();
                 System.out.printf(Depo.Blue + "%-10d %-15s %-15s %-20d", each.getBookCode(), each.getBookName(),
@@ -64,7 +64,7 @@ public class BookMehots {
                 System.out.println();
                 count++;
             }
-           if(count==0){
+            if (count == 0) {
                 System.out.println("Boyle bir code ile uyumlu kitap ismi bulunmamaktadır...");
             }
         }
@@ -77,10 +77,10 @@ public class BookMehots {
         System.out.println("1==> Kitap adi");
         System.out.println("2==> Kitap yazari");
         System.out.println("0==> Menüye geri dön..");
-        int secenek=Depo.input.nextInt();
-        switch (secenek){
+        int secenek = Depo.input.nextInt();
+        switch (secenek) {
             case 1:
-                int count=0;
+                int count = 0;
                 System.out.println("Bilgilerini goruntulemek ıstedıgınız kitabın adını giriniz..");
                 Depo.input.nextLine();
                 String bookName = Depo.input.nextLine();
@@ -94,13 +94,13 @@ public class BookMehots {
                         count++;
                     }
                 }
-                if(count==0) {
+                if (count == 0) {
                     System.out.println(Depo.Red + "Boyle bir kitap ismi iligili bir kitabımız bulunmamaktadır...");
                 }
                 dataWithShowBook();
                 break;
             case 2:
-                int count2=0;
+                int count2 = 0;
                 System.out.println("Bilgilerini goruntulemek ıstedıgınız kitabın yazrını giriniz giriniz..");
                 Depo.input.nextLine();
                 String bookAuthor = Depo.input.nextLine();
@@ -114,8 +114,8 @@ public class BookMehots {
                         count2++;
                     }
                 }
-                if(count2==0){
-                    System.out.println(Depo.Red+"Boyle bir kitap yazarı ile ilgili kitap bulunmamaktadır...");
+                if (count2 == 0) {
+                    System.out.println(Depo.Red + "Boyle bir kitap yazarı ile ilgili kitap bulunmamaktadır...");
                 }
                 dataWithShowBook();
                 break;
@@ -126,8 +126,30 @@ public class BookMehots {
 
         }
     }
-}
 
+    public void deleteOnBookCode() {
+
+        System.out.println("Lutfen silmek istediginiz kitabın code ' unu giriniz....");
+        int deleteBookCode = Depo.input.nextInt();
+
+        for (Books each:booksList) {
+            if (each.getBookCode()==deleteBookCode){
+                System.out.printf("%-10s %-15s %-15s %-20s", "Book Code", "Book Name", "Book Author", "Book Price");
+                System.out.println();
+                System.out.printf(Depo.Blue + "%-10d %-15s %-15s %-20d", each.getBookCode(), each.getBookName(),
+                        each.getBookAuthor(), each.getBookPrice());
+                System.out.println();
+                System.out.println("Yukarıda bilgileri bulunan kitap silinmiştir.");
+                booksList.remove(each);
+                Runner.start();
+            }
+        }
+        System.out.println("Boyle bir code ile kitap bulunmamaktadir...");
+        Runner.start();
+
+
+    }
+}
 
 
 

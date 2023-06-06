@@ -30,13 +30,12 @@ public class Runner {
                 break;
             case 2:
                 bookMehots.bookCodeWithShowBook();
-
                 break;
             case 3:
                 bookMehots.dataWithShowBook();
                 break;
             case 4:
-                System.out.println(Depo.Red+"4==> Kitap No ile Kitap Silme");
+                bookMehots.deleteOnBookCode();
                 break;
             case 5:
                 bookMehots.showBook();
